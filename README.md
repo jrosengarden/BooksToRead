@@ -28,4 +28,6 @@ Genre Filters are automatically added to the list of filters which can be access
     BooksToRead utilizes both CoreData and CloudKit functionallity.
     This allows you to load BooksToRead on multiple devices and they will remain synced (Books and Filters) via the cloud.
       NOTE:  A valid user iCloud account is required and devices must be signed into that iCloud account in order for syncing across devices to occur.
+      
+      NOTE:  Appicons generated from web tool: https://appicon.co
     
