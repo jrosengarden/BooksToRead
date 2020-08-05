@@ -25,7 +25,7 @@ Genre Filters are automatically added to the list of filters which can be access
     The "All" filter is initially added, automatically,  the 1st time the Filters button is tapped.
     The "All" filter can not be deleted as it is the 'default' filter.
     
-    BooksToRead utilized both CoreData and CloudKit functionallity.
+    BooksToRead utilizes both CoreData and CloudKit functionallity.
     This allows you to load BooksToRead on multiple devices and they will remain synced (Books and Filters) via the cloud.
       NOTE:  A valid user iCloud account is required and devices must be signed into that iCloud account in order for syncing across devices to occur
     
