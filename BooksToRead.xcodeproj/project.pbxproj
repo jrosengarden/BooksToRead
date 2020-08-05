@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88317F2424DB19BA0010C46D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 88317F2324DB19BA0010C46D /* README.md */; };
 		8853B9A524D9E9DA0027B447 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853B9A424D9E9DA0027B447 /* FilterViewController.swift */; };
 		88ABA5F524D9BC120059CC0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABA5F424D9BC120059CC0B /* AppDelegate.swift */; };
 		88ABA5F724D9BC120059CC0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABA5F624D9BC120059CC0B /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88317F2324DB19BA0010C46D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		8853B9A424D9E9DA0027B447 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		88ABA5F124D9BC120059CC0B /* BooksToRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksToRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88ABA5F424D9BC120059CC0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		88ABA5F324D9BC120059CC0B /* BooksToRead */ = {
 			isa = PBXGroup;
 			children = (
+				88317F2324DB19BA0010C46D /* README.md */,
 				88ABA61024D9C31C0059CC0B /* BooksToRead.entitlements */,
 				88ABA60B24D9BE960059CC0B /* Data Model */,
 				88ABA5F424D9BC120059CC0B /* AppDelegate.swift */,
@@ -167,6 +170,7 @@
 			files = (
 				88ABA60424D9BC130059CC0B /* LaunchScreen.storyboard in Resources */,
 				88ABA60124D9BC130059CC0B /* Assets.xcassets in Resources */,
+				88317F2424DB19BA0010C46D /* README.md in Resources */,
 				88ABA5FC24D9BC120059CC0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +397,7 @@
 			children = (
 				88C8EBC824DB0AD500209A5F /* BooksToRead.xcdatamodel */,
 			);
+			currentVersion = 88C8EBC824DB0AD500209A5F /* BooksToRead.xcdatamodel */;
 			path = BooksToRead.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
