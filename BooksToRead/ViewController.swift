@@ -8,7 +8,10 @@
 //  Main View Controller    = ViewController.swift
 //  Detail View Controller  = FilterViewController
 
-//  TODO:  Add AppIcons
+//  ToDO:  How to adjust author name so it's last,first (for sorting)
+//  TODO:  Full QA Cycle
+//  TODO:  Find out about finalizing CoreData schema to production (from testing)
+//  TODO:  Find out about submitting an app into the App store!!!!!  (FINALLY!)
 
 
 import UIKit
