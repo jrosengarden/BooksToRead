@@ -8,10 +8,8 @@
 //  Main View Controller    = ViewController.swift
 //  Detail View Controller  = FilterViewController
 
-//  TODO:  Clone this project and rename to BooksToRead
-//  TODO:  Delete original BooksToRead (and the GitHub Project)
-//  TODO:  Create GIT repository (local & remote) for new BooksToRead
-//  TODO:  Clean up comments & code in all code files
+//  TODO:  Add AppIcons
+
 
 import UIKit
 import CoreData
