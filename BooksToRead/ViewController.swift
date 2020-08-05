@@ -182,22 +182,22 @@ class ViewController: UIViewController {
         //Step 3: Setup text fields
         //For first textfield
         alert.addTextField { (textField) in
-            textField.placeholder = "Book Title"
+            textField.placeholder = "Title"
             textField.textColor = .red
         }
         //For second textfield
         alert.addTextField { (textField) in
-            textField.placeholder = "Author Name"
+            textField.placeholder = "Author Name (Last,First)"
             textField.textColor = .blue
         }
         //For third textfield
         alert.addTextField { (textField) in
-            textField.placeholder = "Date Book Acquired (mm/dd/yy)"
+            textField.placeholder = "Date Acquired (mm/dd/yy)"
             textField.textColor = .orange
         }
         //For fourth textfield
         alert.addTextField { (textField) in
-            textField.placeholder = "Book Genre"
+            textField.placeholder = "Genre"
             textField.textColor = .magenta
         }
         
