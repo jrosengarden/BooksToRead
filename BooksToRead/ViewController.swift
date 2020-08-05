@@ -12,6 +12,7 @@
 //  TODO:  Full QA Cycle
 //  TODO:  Find out about finalizing CoreData schema to production (from testing)
 //  TODO:  Find out about submitting an app into the App store!!!!!  (FINALLY!)
+//  TODO:  HUGE TODO: Re-do this app in SwiftUI.  YIKES!
 
 
 import UIKit
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
     // Set initial sortOrder to "title"
     var sortOrder:String = "title"
     
-    // Set initial filterValue to "all"
+    // Set initial filterValue to "*" (Wildcard = All)
     var filterValue:String = "*"
     var predicateValue:String?
     
@@ -73,7 +74,7 @@ class ViewController: UIViewController {
     
     // fetch books stored as Coredata
     // sort them based on the value of sortOrder
-    // filter them based on the valu of filterValue
+    // filter them based on the value of filterValue
     // redisplay the tableView
     func fetchBooks() {
         do {
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
             self.books =  try context.fetch(fetchRequest)
             // reload tableView on main thread since this method
             // will likely be called from the background and we
-            // don't this running on a background thread
+            // don't want this running on a background thread
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -121,8 +122,8 @@ class ViewController: UIViewController {
     }
 
 
-    // Method that fires with the sort button is tapped
-    // setting the sort order in circular fashion
+    // Method that fires when the sort button is tapped
+    // sets the sort order in circular fashion
     // (from title to author, from author to dateAcquired)
     // (and from dateAcquired back to title)
     @IBAction func sortTapped(_ sender: Any) {
@@ -142,6 +143,7 @@ class ViewController: UIViewController {
             break
         }
         
+        // Fetch CoreData, sort, display & filter
         fetchBooks()
     }
     
@@ -174,7 +176,7 @@ class ViewController: UIViewController {
                     print ("oops")
                 }
                 
-                // Re-fetch the data
+                // Fetch CoreData, sort, display & filter
                 self.fetchBooks()
             }
         }
@@ -263,7 +265,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 print ("oops")
             }
             
-            // Re-fetch the data
+            // Fetch CoreData, sort, display & filter
             self.fetchBooks()
         }
     }
@@ -299,8 +301,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     print ("oops")
                 }
                 
-                // Reload the tableview
-                self.tableView.reloadData()
+                // Fetch CoreData, sort, display & filter
+                self.fetchBooks()
             }
         }
         
@@ -340,7 +342,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK:  Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // get a handle to the FilterViewController
