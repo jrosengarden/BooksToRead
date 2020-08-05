@@ -34,4 +34,5 @@ BooksToRead is a simple, TableView driven, iOS application that will help you ma
 - This allows you to sync the data in BooksToRead between your various devices
 - This requires a valid, active, iCloud account that each device must be signed into</ol>
 
-NOTE:  App icons were generated using the web tool at: https://appicon.co
+NOTE:  App icons were generated using the web tool at: https://appicon.co.<br/>
+NOTE:  This .md file was created with the MacDown app on my iMac5K (for creating markdown documents)

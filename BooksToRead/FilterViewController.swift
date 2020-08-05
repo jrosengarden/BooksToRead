@@ -51,7 +51,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchFilters()
         
         // Add "All" to the passedInFilters to insure it
-        // gets added if it doesn't already exist
+        // gets added if it doesn't already exist since
         // "All" is the default filter
         passedInFilters.append("All")
         
