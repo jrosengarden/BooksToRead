@@ -120,6 +120,53 @@ class ViewController: UIViewController {
          */
         
     }
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        
+        var infoMsg:String?
+        
+        infoMsg = "---===App Overview===---\n"
+        infoMsg! += "BooksToRead is a simple, TableView driven, iOS application that will help you maintain a list of books that you've acquired but have not yet read.  The app allows you to optionally filter the books displayed by a specific genre\n\n"
+        infoMsg! += "-==Detail on Books-==\n"
+        infoMsg! += "- Books added to the list have Title, Author Name, Date Acquired and Genre data fields\n"
+        infoMsg! += "- Books can be sorted by Title, by Author or by Date acquired\n"
+        infoMsg! += "- Books can be added by tapping the Add (plus sign) button\n"
+        infoMsg! += "- Books can be edited by tapping on the row containing the book to be edited\n"
+        infoMsg! += "- Books can be sorted by tapping the Sort (up/down arrows) button\n"
+        infoMsg! += "- The Current Book Sort Order is indicated with a single character, at the end of the title, contained within parenthesis\n\n"
+        infoMsg! += "-==Detail on Genre Filters-==\n"
+        infoMsg! += "- A Genre entered on a book is automatically added to the list of filters\n"
+        infoMsg! += "- Genre Filters can be accessed by tapping the Filter (3 horizontally stacked lines) button\n"
+        infoMsg! += "- Genre Filters can be manually added from the Filter tableView but is really unnecessary due to Genre's entered with a book automatically added to the list of Genre Filters\n"
+        infoMsg! += "- Genre Filters are automatically sorted alphabetically\n"
+        infoMsg! += "- Genre Filters can be deleted by swiping right-to-left on the Genre Filter to be deleted\n"
+        infoMsg! += "- The 'All' Genre Filter is automatically added to the list of Genre Filters\n"
+        infoMsg! += "- The 'All' Genre Filter can not be deleted as it is the 'default' Genre Filter\n"
+        infoMsg! += "- Tapping on a Genre Filter will return you to the Book TableView which will now be filtered to only show books belonging to the selected filter\n"
+        infoMsg! += "- The list of books is initially filtered by 'All'\n\n\n"
+        infoMsg! += "-==Additional Notes-==\n"
+        infoMsg! += "- BooksToRead utilizes CoreData\n"
+        infoMsg! += "- BooksToRead utilizes CloudKit (for syncing data across devices)"
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+    // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    // set paragraph style
+    let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        let messageText = NSMutableAttributedString(
+            string: infoMsg!,
+            attributes:  [
+                NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                NSAttributedString.Key.font :
+                    UIFont.preferredFont(forTextStyle: .body)])
+        alert.setValue(messageText, forKey: "attributedMessage")
+    // show the alert
+    self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+
 
 
     // Method that fires when the sort button is tapped
