@@ -146,7 +146,8 @@ class ViewController: UIViewController {
         infoMsg! += "- The list of books is initially filtered by 'All'\n\n\n"
         infoMsg! += "-==Additional Notes-==\n"
         infoMsg! += "- BooksToRead utilizes CoreData\n"
-        infoMsg! += "- BooksToRead utilizes CloudKit (for syncing data across devices)"
+        infoMsg! += "- BooksToRead utilizes CloudKit (for syncing data across devices)\n\n"
+        infoMsg! += "BooksToRead (v1.0 August 2020) created by Jeff Rosengarden"
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.actionSheet)
     // add an action (button)
