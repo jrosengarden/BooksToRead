@@ -125,16 +125,17 @@ class ViewController: UIViewController {
         
         var infoMsg:String?
         
-        infoMsg = "---===App Overview===---\n"
+        // Setup the app instructions for the alert message
+        infoMsg = "\n\n===App Overview===\n"
         infoMsg! += "BooksToRead is a simple, TableView driven, iOS application that will help you maintain a list of books that you've acquired but have not yet read.  The app allows you to optionally filter the books displayed by a specific genre\n\n"
-        infoMsg! += "-==Detail on Books-==\n"
+        infoMsg! += "==Detail on Books==\n"
         infoMsg! += "- Books added to the list have Title, Author Name, Date Acquired and Genre data fields\n"
         infoMsg! += "- Books can be sorted by Title, by Author or by Date acquired\n"
         infoMsg! += "- Books can be added by tapping the Add (plus sign) button\n"
         infoMsg! += "- Books can be edited by tapping on the row containing the book to be edited\n"
         infoMsg! += "- Books can be sorted by tapping the Sort (up/down arrows) button\n"
         infoMsg! += "- The Current Book Sort Order is indicated with a single character, at the end of the title, contained within parenthesis\n\n"
-        infoMsg! += "-==Detail on Genre Filters-==\n"
+        infoMsg! += "==Detail on Genre Filters==\n"
         infoMsg! += "- A Genre entered on a book is automatically added to the list of filters\n"
         infoMsg! += "- Genre Filters can be accessed by tapping the Filter (3 horizontally stacked lines) button\n"
         infoMsg! += "- Genre Filters can be manually added from the Filter tableView but is really unnecessary due to Genre's entered with a book automatically added to the list of Genre Filters\n"
@@ -144,31 +145,30 @@ class ViewController: UIViewController {
         infoMsg! += "- The 'All' Genre Filter can not be deleted as it is the 'default' Genre Filter\n"
         infoMsg! += "- Tapping on a Genre Filter will return you to the Book TableView which will now be filtered to only show books belonging to the selected filter\n"
         infoMsg! += "- The list of books is initially filtered by 'All'\n\n\n"
-        infoMsg! += "-==Additional Notes-==\n"
+        infoMsg! += "==Additional Notes==\n"
         infoMsg! += "- BooksToRead utilizes CoreData\n"
         infoMsg! += "- BooksToRead utilizes CloudKit (for syncing data across devices)\n\n"
         infoMsg! += "BooksToRead (v1.0 August 2020) created by Jeff Rosengarden"
         
-        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.actionSheet)
-    // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-    // set paragraph style
-    let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        let messageText = NSMutableAttributedString(
-            string: infoMsg!,
-            attributes:  [
-                NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                NSAttributedString.Key.font :
-                    UIFont.preferredFont(forTextStyle: .body)])
-        alert.setValue(messageText, forKey: "attributedMessage")
+        // create the alert
+        let infoAlert = UIAlertController(title: "BooksToRead", message: infoMsg!, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        infoAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // Change font and color of title
+        infoAlert.setTitlet(font: UIFont.boldSystemFont(ofSize: 28), color: UIColor.magenta)
+        // Change font and color of message
+        infoAlert.setMessage(font: UIFont(name: "Times-Roman", size: 16), color: UIColor.black)
+        // Change background color of UIAlertController
+        infoAlert.setBackgroundColor(color: UIColor.cyan)
+        // Change tint color of UIAlertController (changes the button colors)
+        infoAlert.setTint(color: UIColor.black)
+
+        
     // show the alert
-    self.present(alert, animated: true, completion: nil)
+    self.present(infoAlert, animated: true, completion: nil)
     }
     
-    
-
-
 
     // Method that fires when the sort button is tapped
     // sets the sort order in circular fashion
@@ -408,5 +408,58 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+// extensions to UIAlertController to allow easy setting of:
+// title font and title color
+// message font and message color
+// background color
+// tint color
+extension UIAlertController {
+    
+    //Set background color of UIAlertController
+    func setBackgroundColor(color: UIColor) {
+        if let bgView = self.view.subviews.first, let groupView = bgView.subviews.first, let contentView = groupView.subviews.first {
+            contentView.backgroundColor = color
+        }
+    }
+    
+    //Set title font and title color
+    func setTitlet(font: UIFont?, color: UIColor?) {
+        guard let title = self.title else { return }
+        let attributeString = NSMutableAttributedString(string: title)//1
+        if let titleFont = font {
+            attributeString.addAttributes([NSAttributedString.Key.font : titleFont],//2
+                                          range: NSMakeRange(0, title.utf8.count))
+        }
+        
+        if let titleColor = color {
+            attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
+                                          range: NSMakeRange(0, title.utf8.count))
+        }
+        self.setValue(attributeString, forKey: "attributedTitle")//4
+    }
+    
+    //Set message font and message color
+    func setMessage(font: UIFont?, color: UIColor?) {
+        guard let message = self.message else { return }
+        let attributeString = NSMutableAttributedString(string: message)
+        if let messageFont = font {
+            attributeString.addAttributes([NSAttributedString.Key.font : messageFont],
+                                          range: NSMakeRange(0, message.utf8.count))
+        }
+        
+        if let messageColorColor = color {
+            attributeString.addAttributes([NSAttributedString.Key.foregroundColor : messageColorColor],
+                                          range: NSMakeRange(0, message.utf8.count))
+        }
+        self.setValue(attributeString, forKey: "attributedMessage")
+    }
+    
+    //Set tint color of UIAlertController
+    func setTint(color: UIColor) {
+        self.view.tintColor = color
+    }
+}
+
 
 
