@@ -30,6 +30,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // handle to UI elements
     @IBOutlet var filterTableView: UITableView!
+    @IBOutlet weak var cellImage: UIImageView!
     
     // empty array of [Genre] to hold filters
     var filters = [Genre]()
@@ -235,7 +236,30 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         let cell = filterTableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
         
+        // set current cell's label
         cell.filterName?.text = filters[indexPath.row].genre
+        
+        // Set the UIImage in the cell with the filter image
+        let cellImage = cell.viewWithTag(1000) as! UIImageView
+        let cellConfig = UIImage.SymbolConfiguration(pointSize: 5, weight: .ultraLight, scale: .small)
+        cellImage.image = UIImage(systemName: "line.horizontal.3.decrease.circle", withConfiguration: cellConfig)
+        
+        // display the filter SF Symbol to the right side of the cell
+        // and set the cell text color to systemBlue and fontsize 28
+        // if this cell is being set to the current/active filter
+        if filters[indexPath.row].genre == hndParent?.filterValue || ((filters[indexPath.row].genre == "*" || filters[indexPath.row].genre == "All") && (hndParent?.filterValue == "All" || hndParent?.filterValue == "*")) {
+ 
+            cell.filterName?.textColor = UIColor.systemBlue
+            cell.filterName?.font = UIFont.systemFont(ofSize: 24)
+            cellImage.isHidden = false
+
+        } else {
+            cell.filterName?.textColor = UIColor.black
+            cell.filterName?.font = UIFont.systemFont(ofSize: 22)
+            cellImage.isHidden = true
+            
+
+        }
 
         return cell
     }
