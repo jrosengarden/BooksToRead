@@ -132,14 +132,8 @@
                                             <navigationItem title="Filter Books By:" id="1P1-pO-fGk"/>
                                         </items>
                                     </navigationBar>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-a5-jsN">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                        <items>
-                                            <navigationItem title="Title" id="Lwu-qT-t8J"/>
-                                        </items>
-                                    </navigationBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C4r-oh-j4d">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="686"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="730"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" id="OfS-pl-sex" customClass="FilterCell" customModule="BooksToRead" customModuleProvider="target">

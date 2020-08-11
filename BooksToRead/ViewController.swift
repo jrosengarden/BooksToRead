@@ -403,6 +403,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             // so we can add any new filters to the list of filters
             for item in books {
                 hndFilterViewController.passedInFilters.append(item.genre!)
+                
             }
         }
     }

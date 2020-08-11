@@ -178,6 +178,12 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
+            // if filter deleted is current filter
+            // then reset current filter to '*'
+            if filters[indexPath.row].genre == hndParent?.filterValue && (filters[indexPath.row].genre != "All" || filters[indexPath.row].genre != "*") {
+                hndParent?.filterValue = "*"
+            }
+            
             // Which filter to remove
             let filterToRemove = self.filters[indexPath.row]
             
@@ -196,6 +202,8 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 // Re-fetch the data
                 self.fetchFilters()
+                
+                
             }
         }
     }
@@ -205,7 +213,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Set filterValue in ViewController then
         // pop back to ViewController
-        hndParent?.filterValue = self.filters[indexPath.row].genre ?? "All"
+        hndParent?.filterValue = filters[indexPath.row].genre ?? "*"
         navigationController?.popToRootViewController(animated: true)
             
     }
