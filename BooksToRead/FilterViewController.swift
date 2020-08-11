@@ -180,7 +180,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             // if filter deleted is current filter
             // then reset current filter to '*'
-            if filters[indexPath.row].genre == hndParent?.filterValue && (filters[indexPath.row].genre != "All" || filters[indexPath.row].genre != "*") {
+            if filters[indexPath.row].genre == hndParent?.filterValue {
                 hndParent?.filterValue = "*"
             }
             
