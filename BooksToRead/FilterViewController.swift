@@ -35,6 +35,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // empty array of [Genre] to hold filters
     var filters = [Genre]()
     
+    // ID Tag for UIImage in tableView Cell
+    let cellID:Int = 1000
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -240,12 +243,12 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.filterName?.text = filters[indexPath.row].genre
         
         // Set the UIImage in the cell with the filter image
-        let cellImage = cell.viewWithTag(1000) as! UIImageView
+        let cellImage = cell.viewWithTag(cellID) as! UIImageView
         let cellConfig = UIImage.SymbolConfiguration(pointSize: 5, weight: .ultraLight, scale: .small)
         cellImage.image = UIImage(systemName: "line.horizontal.3.decrease.circle", withConfiguration: cellConfig)
         
         // display the filter SF Symbol to the right side of the cell
-        // and set the cell text color to systemBlue and fontsize 28
+        // and set the cell text color to systemBlue and fontsize 24
         // if this cell is being set to the current/active filter
         if filters[indexPath.row].genre == hndParent?.filterValue || ((filters[indexPath.row].genre == "*" || filters[indexPath.row].genre == "All") && (hndParent?.filterValue == "All" || hndParent?.filterValue == "*")) {
  

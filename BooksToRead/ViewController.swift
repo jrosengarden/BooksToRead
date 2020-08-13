@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         // Set initial navBarTitle
-        navBarTitle.title = "Books To Read (T)"
+        navBarTitle.title = "BooksToRead (T)"
         
     }
     
@@ -134,11 +134,12 @@ class ViewController: UIViewController {
         infoMsg! += "- Books can be added by tapping the Add (plus sign) button\n"
         infoMsg! += "- Books can be edited by tapping on the row containing the book to be edited\n"
         infoMsg! += "- Books can be sorted by tapping the Sort (up/down arrows) button\n"
+        infoMsg! += "- Books can be deleted by swiping, right-to-left, on the row containing the book to be deleted\n"
         infoMsg! += "- The Current Book Sort Order is indicated with a single character, at the end of the title, contained within parenthesis\n\n"
         infoMsg! += "==Detail on Genre Filters==\n"
         infoMsg! += "- A Genre entered on a book is automatically added to the list of filters\n"
         infoMsg! += "- Genre Filters can be accessed by tapping the Filter (3 horizontally stacked lines) button\n"
-        infoMsg! += "- Genre Filters can be manually added from the Filter tableView but is really unnecessary due to Genre's entered with a book automatically added to the list of Genre Filters\n"
+        infoMsg! += "- Genre Filters can be manually added from the Filter tableView but is really unnecessary due to Genre's entered with a book being automatically added to the list of Genre Filters\n"
         infoMsg! += "- Genre Filters are automatically sorted alphabetically\n"
         infoMsg! += "- Genre Filters can be deleted by swiping right-to-left on the Genre Filter to be deleted\n"
         infoMsg! += "- The 'All' Genre Filter is automatically added to the list of Genre Filters\n"
@@ -180,15 +181,15 @@ class ViewController: UIViewController {
         switch sortOrder {
         case "title":
             sortOrder = "author"
-            navBarTitle.title = "Books To Read (A)"
+            navBarTitle.title = "BooksToRead (A)"
             break
         case "author":
             sortOrder = "dateAcquired"
-            navBarTitle.title = "Books To Read (D)"
+            navBarTitle.title = "BooksToRead (D)"
             break
         default:
             sortOrder = "title"
-            navBarTitle.title = "Books To Read (T)"
+            navBarTitle.title = "BooksToRead (T)"
             break
         }
         
