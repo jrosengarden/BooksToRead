@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         // Set initial navBarTitle
-        navBarTitle.title = "BooksToRead (T)"
+        navBarTitle.title = "Sort: Title"
         
     }
     
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
         
         // Setup the app instructions for the alert message
         infoMsg = "\n\n===App Overview===\n"
-        infoMsg! += "BooksToRead is a simple, TableView driven, iOS application that will help you maintain a list of books that you've acquired but have not yet read.  The app allows you to optionally filter the books displayed by a specific genre\n\n"
+        infoMsg! += "BooksToRead is a simple, TableView driven, iOS application that will help you maintain a list of books that you've acquired but have not yet read and/or books you want to read.  The app allows you to optionally filter the books displayed by a specific genre\n\n"
         infoMsg! += "==Detail on Books==\n"
         infoMsg! += "- Books added to the list have Title, Author Name, Date Acquired and Genre data fields\n"
         infoMsg! += "- Books can be sorted by Title, by Author or by Date acquired\n"
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         infoMsg! += "- Books can be edited by tapping on the row containing the book to be edited\n"
         infoMsg! += "- Books can be sorted by tapping the Sort (up/down arrows) button\n"
         infoMsg! += "- Books can be deleted by swiping, right-to-left, on the row containing the book to be deleted\n"
-        infoMsg! += "- The Current Book Sort Order is indicated with a single character, at the end of the title, contained within parenthesis\n\n"
+        infoMsg! += "- The Current Book Sort Order is displayed at the top of the list in the navigation bar\n\n"
         infoMsg! += "==Detail on Genre Filters==\n"
         infoMsg! += "- A Genre entered on a book is automatically added to the list of filters\n"
         infoMsg! += "- Genre Filters can be accessed by tapping the Filter (3 horizontally stacked lines) button\n"
@@ -150,7 +150,7 @@ class ViewController: UIViewController {
         infoMsg! += "==Additional Notes==\n"
         infoMsg! += "- BooksToRead utilizes CoreData\n"
         infoMsg! += "- BooksToRead utilizes CloudKit (for syncing data across devices)\n\n"
-        infoMsg! += "BooksToRead (v1.0 August 2020) created by Jeff Rosengarden"
+        infoMsg! += "BooksToRead\nv1.1 December 2020\nCreated by Jeff Rosengarden"
         
         // create the alert
         let infoAlert = UIAlertController(title: "BooksToRead", message: infoMsg!, preferredStyle: UIAlertController.Style.alert)
@@ -181,15 +181,15 @@ class ViewController: UIViewController {
         switch sortOrder {
         case "title":
             sortOrder = "author"
-            navBarTitle.title = "BooksToRead (A)"
+            navBarTitle.title = "Sort: Author"
             break
         case "author":
             sortOrder = "dateAcquired"
-            navBarTitle.title = "BooksToRead (D)"
+            navBarTitle.title = "Sort: Date"
             break
         default:
             sortOrder = "title"
-            navBarTitle.title = "BooksToRead (T)"
+            navBarTitle.title = "Sort: Title"
             break
         }
         
