@@ -45,7 +45,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // hook up the filter data with the filterTableView
         filterTableView.delegate = self
         filterTableView.dataSource = self
-        
+      
 
     }
     

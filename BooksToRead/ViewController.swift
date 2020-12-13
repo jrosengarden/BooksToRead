@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Set custom text to <Back button
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back To Books", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         // Hook up CoreData to tableView
         tableView.delegate = self
