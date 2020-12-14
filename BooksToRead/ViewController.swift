@@ -124,7 +124,7 @@ class ViewController: UIViewController {
     @IBAction func infoButtonTapped(_ sender: Any) {
         
         var infoMsg:String?
-        
+
         // Setup the app instructions for the alert message
         infoMsg = "\n\n===App Overview===\n"
         infoMsg! += "BooksToRead is a simple, TableView driven, iOS application that will help you maintain a list of books that you've acquired but have not yet read and/or books you want to read.  The app allows you to optionally filter the books displayed by a specific genre\n\n"
@@ -142,6 +142,7 @@ class ViewController: UIViewController {
         infoMsg! += "- Genre Filters can be manually added from the Filter tableView but is really unnecessary due to Genre's entered with a book being automatically added to the list of Genre Filters\n"
         infoMsg! += "- Genre Filters are automatically sorted alphabetically\n"
         infoMsg! += "- Genre Filters can be deleted by swiping right-to-left on the Genre Filter to be deleted\n"
+        infoMsg! += "- Deleted Genre filters will automatically be added back if still associated with any books\n"
         infoMsg! += "- The 'All' Genre Filter is automatically added to the list of Genre Filters\n"
         infoMsg! += "- The 'All' Genre Filter can not be deleted as it is the 'default' Genre Filter\n"
         infoMsg! += "- Tapping on a Genre Filter will return you to the Book TableView which will now be filtered to only show books belonging to the selected filter\n"
