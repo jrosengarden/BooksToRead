@@ -151,7 +151,6 @@
                                                         </imageView>
                                                     </subviews>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <connections>
                                                     <outlet property="filterName" destination="Upc-xe-GXf" id="Ge9-R8-YnG"/>
                                                 </connections>
@@ -210,9 +209,6 @@
         <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
